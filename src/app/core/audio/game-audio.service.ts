@@ -16,22 +16,9 @@ export class GameAudioService {
     if (this.context.state === 'suspended') void this.context.resume();
   }
 
-  playStart(): void {
-    this.unlock();
-    [440, 560, 760].forEach((frequency, index) => this.tone(frequency, 0.07, index * 0.11, 'sine', 0.38));
-  }
-
-  playCatch(kind: ItemKind): void {
-    const glassKinds: ItemKind[] = ['glass', 'brokenGlass'];
-    const metalKinds: ItemKind[] = ['can', 'tin', 'foilTray'];
-    const paperKinds: ItemKind[] = ['box', 'paper', 'newspaper', 'magazine', 'pizzaBox'];
-    const frequency = glassKinds.includes(kind) ? 980 : metalKinds.includes(kind) ? 680 : paperKinds.includes(kind) ? 440 : 540;
-    const wave: OscillatorType = glassKinds.includes(kind) ? 'sine' : metalKinds.includes(kind) ? 'triangle' : 'sine';
-    this.tone(frequency, 0.075, 0, wave, 0.3, frequency * 1.14);
-  }
-
-  playBounce(): void {
-    this.tone(210, 0.11, 0, 'square', 0.22, 115);
+  playCatch(_kind: ItemKind): void {
+    this.tone(620, 0.09, 0, 'sine', 0.34, 920);
+    this.tone(920, 0.08, 0.07, 'sine', 0.26, 1120);
   }
 
   playBatteryHit(): void {
@@ -39,13 +26,9 @@ export class GameAudioService {
     this.tone(150, 0.22, 0, 'sawtooth', 0.34, 58);
   }
 
-  playTick(): void {
-    this.tone(820, 0.055, 0, 'sine', 0.24);
-  }
-
-  playFinish(success: boolean): void {
-    const notes = success ? [523, 659, 784] : [330, 247, 196];
-    notes.forEach((frequency, index) => this.tone(frequency, 0.14, index * 0.12, 'triangle', 0.3));
+  playTruckBounce(): void {
+    this.tone(185, 0.1, 0, 'triangle', 0.28, 105);
+    this.noise(0.055, 0.12);
   }
 
   private tone(frequency: number, duration: number, delay = 0, type: OscillatorType = 'sine', volume = 0.3, endFrequency = frequency): void {

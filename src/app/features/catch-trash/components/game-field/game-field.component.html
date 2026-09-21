@@ -1,1 +1,1 @@
-<section [class.damage-flash]="damageFlash()" (pointerdown)="begin($event)" (pointermove)="move($event)">@for (item of items(); track item.id) { <app-falling-item [item]="item" /> }<div class="hint">{{ i18n.t('play.hint') }}</div><app-garbage-truck [x]="truckX()" [damaged]="damageFlash()" /></section>
+<section [class.damage-flash]="damageFlash()">@for (item of items(); track item.id) { <app-falling-item [item]="item" /> }<app-garbage-truck [x]="truckX()" [loadLevel]="loadLevel()" [damaged]="damageFlash()" /></section>

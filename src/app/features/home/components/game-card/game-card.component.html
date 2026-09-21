@@ -1,1 +1,15 @@
-<article [class]="'card ' + game().theme"><div class="decor"></div><div class="copy"><span class="eyebrow">{{ game().eyebrow }}</span><h2>{{ game().title }}</h2><p>{{ game().description }}</p></div><div class="art" aria-hidden="true"><span>{{ game().icon }}</span></div>@if (game().route) { <a [routerLink]="game().route" [attr.aria-label]="i18n.t('game.playAria') + ' ' + game().title"><b>→</b></a> } @else { <div class="locked"><span>🔒</span><small>{{ game().status }}</small></div> }</article>
+@if (game().route) {
+  <a class="card playable" [class]="'card playable ' + game().theme" [routerLink]="game().route" [attr.aria-label]="i18n.t('game.playAria') + ' ' + game().title">
+    <div class="decor"></div>
+    <div class="copy"><span class="eyebrow">{{ game().eyebrow }}</span><h2>{{ game().title }}</h2><p>{{ game().description }}</p></div>
+    <div class="art" aria-hidden="true"><span>{{ game().icon }}</span></div>
+    <span class="action" aria-hidden="true"><b>→</b></span>
+  </a>
+} @else {
+  <article [class]="'card ' + game().theme">
+    <div class="decor"></div>
+    <div class="copy"><span class="eyebrow">{{ game().eyebrow }}</span><h2>{{ game().title }}</h2><p>{{ game().description }}</p></div>
+    <div class="art" aria-hidden="true"><span>{{ game().icon }}</span></div>
+    <div class="locked"><span>🔒</span><small>{{ game().status }}</small></div>
+  </article>
+}

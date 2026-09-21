@@ -34,4 +34,5 @@ export interface FallingItem {
   rotation: number;
   dangerous: boolean;
   bounced: boolean;
+  groundHit: boolean;
 }
