@@ -184,6 +184,7 @@ export class CatchTrashStore {
     this.stopLoop();
     this._round.update(round => round + 1);
     this._timeLeft.set(60);
+    this._lives.set(3);
     this._loadLevel.set(0);
     this._items.set([]);
     this._status.set('roundTransition');
