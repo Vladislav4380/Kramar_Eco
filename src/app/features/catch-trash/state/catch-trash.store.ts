@@ -143,7 +143,7 @@ export class CatchTrashStore {
     const kind = pool[Math.floor(Math.random() * pool.length)];
     const speed = 0.16 + Math.min(.12, this._score() / 6000);
     const dangerous = kind === 'battery' || kind === 'batterySmall';
-    this._items.update(items => [...items, { id: ++this.itemId, kind, x: 8 + Math.random() * 84, y: -8, speed, velocityX: 0, velocityY: speed, rotation: Math.random() * 40 - 20, dangerous, bounced: false, groundHit: false }]);
+    this._items.update(items => [...items, { id: ++this.itemId, kind, x: 14 + Math.random() * 72, y: -8, speed, velocityX: 0, velocityY: speed, rotation: Math.random() * 40 - 20, dangerous, bounced: false, groundHit: false }]);
   }
 
   private getTruckGeometry(): { truckLeft: number; captureLeft: number; captureRight: number; truckRight: number; openingTop: number; openingBottom: number; solidTop: number; solidBottom: number } {

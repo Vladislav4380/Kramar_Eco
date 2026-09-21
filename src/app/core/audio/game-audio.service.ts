@@ -27,8 +27,9 @@ export class GameAudioService {
   }
 
   playTruckBounce(): void {
-    this.tone(185, 0.1, 0, 'triangle', 0.28, 105);
-    this.noise(0.055, 0.12);
+    this.tone(520, 0.065, 0, 'triangle', 0.24, 360);
+    this.tone(860, 0.045, 0.018, 'sine', 0.17, 610);
+    this.noise(0.025, 0.065);
   }
 
   private tone(frequency: number, duration: number, delay = 0, type: OscillatorType = 'sine', volume = 0.3, endFrequency = frequency): void {
