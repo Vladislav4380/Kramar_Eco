@@ -1,0 +1,10 @@
+:host { display: block; min-height: 100svh; background: radial-gradient(circle at 88% 0, #c9efdc 0 10%, transparent 30%), #eef8f3; }
+main { min-height: 100svh; }
+.intro, .games, footer { width: min(100% - 28px, 720px); margin-inline: auto; }
+.intro { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding: 18px 4px 16px; }
+.intro span { color: #168552; font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+h1 { margin: 2px 0 0; font-size: clamp(28px, 7vw, 42px); line-height: 1; letter-spacing: -.045em; }
+p { max-width: 300px; margin: 0; color: #6a8176; font-size: 13px; line-height: 1.35; text-align: right; }
+.games { display: grid; gap: 10px; padding-bottom: 12px; }
+footer { padding: 18px 0 28px; color: #7a9288; text-align: center; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+@media (max-width: 460px) { .intro { align-items: start; padding-top: 12px; } .intro p { max-width: 180px; font-size: 11px; } }

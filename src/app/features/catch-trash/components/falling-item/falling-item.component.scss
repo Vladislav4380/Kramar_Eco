@@ -1,0 +1,33 @@
+:host { display: contents; }
+.item { position: absolute; z-index: 7; display: grid; place-items: center; width: clamp(34px, 3.2vw, 46px); height: clamp(34px, 3.2vw, 46px); will-change: top, left, transform; contain: layout paint; }
+.sprite { display: block; width: 100%; height: 100%; background-repeat: no-repeat; }
+.bottle, .can, .box, .banana, .cup, .paper, .glass, .tin, .wrapper, .bag { background-image: url('/assets/game/ChatGPT Image Sep 21, 2026, 05_12_10 PM.png'); }
+.bottle, .can, .box, .banana { background-size: 400% 300%; }
+.bottle { background-position: 0 0; }
+.box { background-position: 33.333% 0; }
+.banana { background-position: 66.666% 0; }
+.can { background-position: 100% 0; }
+.cup, .paper, .glass, .tin, .wrapper, .bag { background-size: 300% 300%; }
+.cup { background-position: 0 50%; }
+.paper { background-position: 50% 50%; }
+.glass { background-position: 100% 50%; }
+.tin { background-position: 0 100%; }
+.wrapper { background-position: 50% 100%; }
+.bag { background-position: 100% 100%; }
+.carton, .newspaper, .magazine, .carrierBag, .brokenGlass, .yogurt, .appleCore, .pizzaBox, .foodBox, .foilTray, .detergent, .candyWrapper { background-image: url('/assets/game/ChatGPT Image Sep 21, 2026, 06_34_42 PM.png'); background-size: 400% 300%; }
+.carton { background-position: 0 0; }
+.newspaper { background-position: 33.333% 0; }
+.magazine { background-position: 66.666% 0; }
+.carrierBag { background-position: 100% 0; }
+.brokenGlass { background-position: 0 50%; }
+.yogurt { background-position: 33.333% 50%; }
+.appleCore { background-position: 66.666% 50%; }
+.pizzaBox { background-position: 100% 50%; }
+.foodBox { background-position: 0 100%; }
+.foilTray { background-position: 33.333% 100%; }
+.detergent { background-position: 66.666% 100%; }
+.candyWrapper { background-position: 100% 100%; }
+.battery, .batterySmall { width: 100%; height: 100%; background-image: url('/assets/game/ChatGPT Image Sep 21, 2026, 05_12_28 PM.png'); background-repeat: no-repeat; background-size: 300% 200%; }
+.battery { background-position: 0 0; }
+.batterySmall { background-position: 50% 0; }
+.danger { width: clamp(34px, 3.2vw, 46px); height: clamp(34px, 3.2vw, 46px); }

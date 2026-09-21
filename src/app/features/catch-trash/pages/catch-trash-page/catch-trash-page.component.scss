@@ -1,0 +1,8 @@
+:host { display: grid; place-items: center; width: 100%; height: 100svh; overflow: hidden; background: #153d31; }
+main { position: relative; width: 100vw; height: 100svh; margin: auto; overflow: hidden; background: #a9def0; box-shadow: 0 0 80px #081b1666; }
+@media (orientation: landscape) {
+  main { width: min(100vw, 177.778svh); height: min(100svh, 56.25vw); }
+}
+@media (orientation: landscape) and (max-height: 420px) {
+  main { width: 100vw; height: 100svh; }
+}

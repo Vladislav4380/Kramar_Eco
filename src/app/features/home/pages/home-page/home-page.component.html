@@ -1,0 +1,1 @@
+<main><app-home-header /><section class="intro"><div><span>{{ i18n.t('home.kicker') }}</span><h1>{{ i18n.t('home.title') }}</h1></div><p>{{ i18n.t('home.subtitle') }}</p></section><section class="games">@for (game of games(); track game.title) { <app-game-card [game]="game" /> }</section><footer>{{ i18n.t('home.footer') }}</footer></main>
