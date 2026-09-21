@@ -14,7 +14,10 @@ a, button { display: grid; place-items: center; width: 40px; height: 40px; paddi
 .time strong { font-size: 14px; line-height: 1; }
 .progress { grid-column: 1 / -1; height: 9px; padding: 1px; overflow: hidden; border: 1px solid #9fdcff; border-radius: 99px; background: #082c48; box-shadow: inset 0 1px 2px #031826; }
 .progress i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(180deg, #67ed3c, #22b925); box-shadow: inset 0 1px 1px #d0ff9c; transition: width .2s linear; }
-.lives { display: flex; align-items: center; gap: 3px; padding: 0 9px; color: #ff5267; font-size: clamp(18px, 2.4vw, 25px); line-height: 1; -webkit-text-stroke: 1px #b51d3e; text-shadow: 0 2px 0 #941833, 0 0 4px #ff91a0; }
-.lives .empty { color: transparent; -webkit-text-stroke: 1.5px #9bb5c5; text-shadow: none; }
+.lives { display: flex; align-items: center; gap: 7px; padding: 0 10px; }
+.life-bin { position: relative; display: block; width: clamp(14px, 2vw, 21px); height: clamp(19px, 2.7vw, 28px); border: 2px solid #d8ffcf; border-radius: 3px 3px 5px 5px; background: linear-gradient(90deg, #40bd31, #79e54d 48%, #2d9e29); box-shadow: inset 2px 1px 2px #e3ffbd80, 0 2px 0 #125f26, 0 0 5px #79f05780; transition: filter .2s, opacity .2s; }
+.life-bin::before { content: ''; position: absolute; top: -5px; left: -3px; width: calc(100% + 6px); height: 5px; border: 1px solid #d8ffcf; border-radius: 3px 3px 1px 1px; background: #56ca3d; box-shadow: 0 -2px 0 #2b9128; }
+.life-bin::after { content: '♻'; position: absolute; inset: 1px 0 0; display: grid; place-items: center; color: #efffe8; font-size: clamp(9px, 1.25vw, 13px); line-height: 1; text-shadow: 0 1px 0 #247c29; }
+.life-bin.empty { filter: grayscale(1); opacity: .38; box-shadow: inset 2px 1px 2px #ffffff60, 0 2px 0 #52616b; }
 .pause { font-size: 23px; letter-spacing: -5px; padding-right: 5px; }
-@media (max-height: 420px) { :host { top: calc(max(5px, env(safe-area-inset-top)) + 5px); } header { grid-template-columns: 36px minmax(90px, 125px) minmax(130px, 200px) auto 38px; gap: 6px; } a { width: 36px; } button { width: 38px; } a, button, .panel { height: 36px; } .coin { width: 29px; flex-basis: 29px; } .lives { font-size: 18px; padding-inline: 7px; } }
+@media (max-height: 420px) { :host { top: calc(max(5px, env(safe-area-inset-top)) + 5px); } header { grid-template-columns: 36px minmax(90px, 125px) minmax(130px, 200px) auto 38px; gap: 6px; } a { width: 36px; } button { width: 38px; } a, button, .panel { height: 36px; } .coin { width: 29px; flex-basis: 29px; } .lives { gap: 5px; padding-inline: 7px; } }

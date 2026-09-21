@@ -114,7 +114,7 @@ export class CatchTrashStore {
 
   private spawn(): void {
     if (this._items().length >= 16) return;
-    const pool: ItemKind[] = [
+    const trashPool: ItemKind[] = [
       'bottle',
       'can',
       'box',
@@ -137,12 +137,13 @@ export class CatchTrashStore {
       'foilTray',
       'detergent',
       'candyWrapper',
-      'battery',
-      'batterySmall',
     ];
-    const kind = pool[Math.floor(Math.random() * pool.length)];
-    const speed = 0.16 + Math.min(.12, this._score() / 6000);
-    const dangerous = kind === 'battery' || kind === 'batterySmall';
+    const dangerous = Math.random() < .14;
+    const kind: ItemKind = dangerous
+      ? (Math.random() < .5 ? 'battery' : 'batterySmall')
+      : trashPool[Math.floor(Math.random() * trashPool.length)];
+    const roundSpeedBonus = (this._round() - 1) * .032;
+    const speed = .16 + roundSpeedBonus + Math.min(.12, this._score() / 6000);
     this._items.update(items => [...items, { id: ++this.itemId, kind, x: 14 + Math.random() * 72, y: -8, speed, velocityX: 0, velocityY: speed, rotation: Math.random() * 40 - 20, dangerous, bounced: false, groundHit: false }]);
   }
 
