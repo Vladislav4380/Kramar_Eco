@@ -108,7 +108,11 @@ export class CatchTrashStore {
       } else if (moved.y < 104) next.push(moved);
     }
     this._items.set(next);
-    if (this._lives() <= 0) { this.finish(); return; }
+    if (this._lives() <= 0) {
+      if (this._round() < 3) this.beginNextRound();
+      else this.finish();
+      return;
+    }
     this.frame = requestAnimationFrame(t => this.tick(t));
   }
 
