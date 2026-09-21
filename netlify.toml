@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist/kramar-eco/browser"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--include=dev"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
